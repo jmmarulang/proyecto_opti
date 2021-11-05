@@ -133,7 +133,7 @@ loss = []
 
 for l in range(1000):
     
-    pY = train(neural_n, X, Y, l2_cost, lr = 0.1)
+    pY = train(neural_n, X, Y, l2_cost, lr = 0.15)
     
     if l % 25 == 0:
         loss.append(l2_cost[0](pY, Y))
@@ -156,6 +156,7 @@ for l in range(1000):
         plt.scatter(X[Y[:, 0] == 1,0], X[Y[:, 0] == 1, 1], c = "salmon")
         
         clear_output(wait = True)
+        plt.title(l)
         plt.show()
         #plt.plot(range(len(loss)), loss)
         #plt.show()
